@@ -21,8 +21,28 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    avoid_print: true # print文の使用を避ける（ログ出力には適切なロギングツールを使用する）
+    avoid_empty_else: true # 空のelseブロックを避ける
+    always_use_package_imports: true # パッケージのインポートには常にpackage:を使用する
+    unnecessary_this: true # 不必要なthisキーワードの使用を避ける
+    prefer_final_fields: true # 変更されないフィールドにはfinalを使用する
+    use_super_parameters: true # コンストラクタでsuperパラメータを使用する
+    avoid_unnecessary_containers: true # 不必要なContainerウィジェットの使用を避ける
+    prefer_const_constructors: true # 定数コンストラクタを優先して使用する
+    prefer_const_literals_to_create_immutables: true # 不変リストやマップにはconstを使用する
+    sort_constructors_first: true # クラス内でコンストラクタを一番上に配置する
+    avoid_types_on_closure_parameters: true # ラムダ式のパラメータには型を省略する
+    prefer_expression_function_bodies: true # 簡単な関数は=>を使って表現する
+    directives_ordering: true # import文の順序を守る
+    constant_identifier_names: true # 定数名は大文字で記述する
+    library_private_types_in_public_api: true # ライブラリ外に内部型を公開しない
+    unnecessary_nullable_for_final_variable_declarations: true # final変数に不要な?を付けない
 
+analyzer:
+  exclude:
+    - "**/*.g.dart" # 自動生成ファイル除外
+    - "**/*.freezed.dart"
+    - "**/*.gr.dart"
+    - "**/*.config.dart"
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
