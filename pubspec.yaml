@@ -60,7 +60,7 @@ flutter_launcher_icons:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-    - assets/sounds/
+    - assets/sounds/r_n/
     - assets/images/
 
   # The following line ensures that the Material Icons font is

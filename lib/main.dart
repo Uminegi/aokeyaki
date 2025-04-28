@@ -37,6 +37,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width; // 画面の幅を取得
     final double screenHeight = MediaQuery.of(context).size.height; // 画面の高さを取得
+    final player = AudioPlayer();
+    final duration = player.setAsset("assets/sounds/r_n/も.mp3");
+    bool test = true;
     return Scaffold(
       appBar: AppBar(
         backgroundColor:
@@ -53,7 +56,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   fixedSize: Size(
                       screenWidth * 0.7, screenHeight * 0.12), // ボタンサイズを画面比で指定
                 ),
-                onPressed: () {}, // ボタン押下時の処理
+                onPressed: () {
+                  if (test) {
+                    player.play();
+                    test = false;
+                  } else {
+                    player.stop();
+                    player.seek(Duration(seconds: 0));
+                    test = true;
+                  }
+                }, // ボタン押下時の処理
                 child: const Text("記憶時間に移る")), // ボタンのラベル
           ],
         ),
