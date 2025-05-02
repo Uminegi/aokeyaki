@@ -32,6 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   just_audio: ^0.9.36
+  circular_countdown_timer: ^0.2.4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
